@@ -1,32 +1,23 @@
-# Arrays
+# Problem #1 - Two Sum
 
-## Pattern Description
+## Pattern
+Arrays + Hash Map
 
-> Brief description of the Array pattern.
+## Key Idea
+Store previously seen numbers in a hash map.
+For each number, calculate the complement (target - current).
+If the complement already exists in the map, return both indices.
 
-## When to Use
-
-- When elements are accessed by index
-- When random access is required
-- For sliding window or prefix sum problems
+## Algorithm
+1. Create an empty hash map.
+2. Loop through the array.
+3. Calculate the complement.
+4. Check if the complement exists.
+5. If yes, return the indices.
+6. Otherwise, store the current number and index.
 
 ## Time Complexity
+O(n)
 
-- Access: O(1)
-- Search (unsorted): O(n)
-- Search (sorted): O(log n)
-- Insert/Delete (end): O(1)
-- Insert/Delete (middle): O(n)
-
-## Common Mistakes
-
-- Off-by-one indexing errors
-- Modifying array while iterating
-- Assuming sorted input without checking
-
-## Example Problems
-
-- Two Sum
-- Best Time to Buy and Sell Stock
-- Maximum Subarray
-- Contains Duplicate
+## Space Complexity
+O(n)
