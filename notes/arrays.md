@@ -44,3 +44,28 @@ O(n)
 
 ## Space Complexity
 O(n)
+
+
+
+# Problem #3 - Best Time to Buy and Sell Stock
+
+## Pattern
+Arrays + Greedy
+
+## Key Idea
+Keep track of the lowest stock price seen so far.
+For each new price, calculate the profit if you sold today.
+Update the maximum profit whenever you find a better one.
+
+## Algorithm
+1. Store the first price as the minimum price.
+2. Traverse the array once.
+3. Update the minimum price if a lower price is found.
+4. Calculate today's profit.
+5. Update the maximum profit.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
