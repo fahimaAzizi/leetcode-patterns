@@ -21,3 +21,26 @@ O(n)
 
 ## Space Complexity
 O(n)
+
+
+# Problem #2 - Contains Duplicate
+
+## Pattern
+Arrays + Hash Set
+
+## Key Idea
+Use a hash set to keep track of numbers you've already seen.
+If a number is already in the set, a duplicate exists.
+
+## Algorithm
+1. Create an empty hash set.
+2. Traverse the array.
+3. If the current number already exists in the set, return true.
+4. Otherwise, insert it into the set.
+5. If the loop finishes, return false.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(n)
