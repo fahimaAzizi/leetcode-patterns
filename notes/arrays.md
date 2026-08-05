@@ -96,3 +96,28 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+
+
+# Problem #5 - Running Sum of 1D Array
+
+## Pattern
+Arrays + Prefix Sum
+
+## Key Idea
+Each element becomes the sum of itself and all previous elements.
+
+Instead of creating a new array, update the original array.
+
+## Algorithm
+
+1. Start from index 1.
+2. Add the previous value to the current value.
+3. Continue until the end.
+4. Return the modified array.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
