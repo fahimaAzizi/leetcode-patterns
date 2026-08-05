@@ -69,3 +69,30 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+
+# Problem #4 - Move Zeroes
+
+## Pattern
+Arrays + Two Pointers
+
+## Key Idea
+Use two pointers:
+- `right` scans every element.
+- `left` keeps track of where the next non-zero element should go.
+
+Whenever a non-zero element is found, swap it with the element at `left`, then move `left` forward.
+
+## Algorithm
+1. Set `left = 0`.
+2. Traverse the array with `right`.
+3. If `nums[right]` is not zero:
+   - Swap `nums[left]` and `nums[right]`.
+   - Increment `left`.
+4. Continue until the end.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
