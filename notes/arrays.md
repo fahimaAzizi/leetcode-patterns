@@ -121,3 +121,33 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+
+# Problem #6 - Merge Sorted Array
+
+## Pattern
+Arrays + Two Pointers
+
+## Key Idea
+Merge the arrays from the end instead of the beginning.
+
+Since nums1 already has extra space at the end,
+start comparing the largest elements from both arrays
+and place the larger one at the back.
+
+## Algorithm
+
+1. Set three pointers:
+   - i = last valid element in nums1
+   - j = last element in nums2
+   - k = last position in nums1
+2. Compare nums1[i] and nums2[j].
+3. Place the larger value at nums1[k].
+4. Move the corresponding pointer.
+5. Copy any remaining elements from nums2.
+
+## Time Complexity
+O(m + n)
+
+## Space Complexity
+O(1)
