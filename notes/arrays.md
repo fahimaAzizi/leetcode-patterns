@@ -207,3 +207,27 @@ O(n)
 
 ## Space Complexity
 O(1)
+# Problem #9 - Squares of a Sorted Array
+
+## Pattern
+Arrays + Two Pointers
+
+## Key Idea
+The largest square must come from either the most negative
+number on the left or the largest positive number on the right.
+
+Use two pointers and fill the result from the end.
+
+## Algorithm
+1. Set `left` at the beginning.
+2. Set `right` at the end.
+3. Compare the absolute values at both pointers.
+4. Put the larger square at the end of the result.
+5. Move the pointer that was used.
+6. Continue until all positions are filled.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(n)
