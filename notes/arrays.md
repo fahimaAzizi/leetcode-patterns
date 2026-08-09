@@ -179,3 +179,31 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+# Problem #8 - Pivot Index
+
+## Pattern
+Arrays + Prefix Sum
+
+## Key Idea
+Calculate the total sum of the array first.
+
+For every index:
+right sum = total sum - left sum - current value
+
+If the left sum equals the right sum, we found the pivot index.
+
+## Algorithm
+1. Calculate the total sum of the array.
+2. Start `leftSum` at 0.
+3. For each index, calculate the right sum.
+4. Compare left sum and right sum.
+5. If they are equal, return the index.
+6. Otherwise, add the current value to `leftSum`.
+7. If no pivot exists, return -1.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
