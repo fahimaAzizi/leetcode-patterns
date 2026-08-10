@@ -151,3 +151,31 @@ O(m + n)
 
 ## Space Complexity
 O(1)
+
+# Problem #7 - Remove Duplicates from Sorted Array
+
+## Pattern
+Arrays + Two Pointers
+
+## Key Idea
+Because the array is already sorted, duplicate values are next
+to each other.
+
+Use two pointers:
+- `right` searches through the array.
+- `left` marks where the next unique value should be placed.
+
+## Algorithm
+1. Start `left` at index 1.
+2. Move `right` through the array.
+3. If the current value is different from the previous value,
+   it is unique.
+4. Put that value at `nums[left]`.
+5. Move `left` forward.
+6. Return `left`, which represents the number of unique values.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
