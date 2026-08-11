@@ -218,3 +218,59 @@ O(n)
 
 ## Space Complexity
 O(1)
+# Problem #45 - 3Sum
+
+## Pattern
+Sorting + Two Pointers
+
+## Key Idea
+
+We need to find three numbers whose sum equals zero.
+
+First, sort the array.
+
+Then choose one number and use two pointers to find the
+other two numbers.
+
+## Example
+
+nums = [-1,0,1,2,-1,-4]
+
+After sorting:
+
+[-4,-1,-1,0,1,2]
+
+Choose:
+
+-1
+
+Now use two pointers to find two numbers that make the
+total equal to zero.
+
+-1 + -1 + 2 = 0
+
+-1 + 0 + 1 = 0
+
+Answer:
+
+[[-1,-1,2],[-1,0,1]]
+
+## Algorithm
+
+1. Sort the array.
+2. Choose one number using a loop.
+3. Put `left` after that number.
+4. Put `right` at the end.
+5. Calculate the sum of all three numbers.
+6. If the sum is too small, move `left`.
+7. If the sum is too large, move `right`.
+8. If the sum is zero, save the triplet.
+9. Skip duplicate values.
+
+## Time Complexity
+
+O(n²)
+
+## Space Complexity
+
+O(1) excluding the output.
