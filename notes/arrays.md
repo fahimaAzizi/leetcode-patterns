@@ -231,3 +231,26 @@ O(n)
 
 ## Space Complexity
 O(n)
+
+# Problem #10 - Product of Array Except Self
+
+## Pattern
+Arrays + Prefix/Suffix Products
+
+## Key Idea
+For each position, multiply the product of all elements
+to its left by the product of all elements to its right.
+
+Use one pass for prefix products and one pass for suffix products.
+
+## Algorithm
+1. Traverse from left to right and store the left product.
+2. Traverse from right to left.
+3. Multiply each answer by the right product.
+4. Return the answer.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1) extra space
