@@ -254,3 +254,31 @@ O(n)
 
 ## Space Complexity
 O(1) extra space
+
+
+# Problem #11 - Maximum Subarray
+
+## Pattern
+Arrays + Kadane's Algorithm
+
+## Key Idea
+At every element, decide whether it is better to:
+1. Start a new subarray from the current element, or
+2. Continue the previous subarray.
+
+If the previous sum becomes harmful, start again.
+
+## Algorithm
+1. Store the first number as `currentSum`.
+2. Store it as the initial `maxSum`.
+3. For every next number:
+   - Compare the current number with `currentSum + current number`.
+   - Keep the larger value.
+4. Update `maxSum`.
+5. Return `maxSum`.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
