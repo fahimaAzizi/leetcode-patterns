@@ -282,3 +282,35 @@ O(n)
 
 ## Space Complexity
 O(1)
+# Problem #12 - Best Time to Buy and Sell Stock II
+
+## Pattern
+Arrays + Greedy
+
+## Key Idea
+Take every positive price increase.
+
+If today's price is higher than yesterday's price,
+we can capture that increase as profit.
+
+## Algorithm
+1. Start with profit = 0.
+2. Compare each price with the previous price.
+3. If today's price is higher, add the difference to profit.
+4. Continue until the end.
+5. Return the total profit.
+
+## Example
+
+prices = [7,1,5,3,6,4]
+
+1 -> 5 gives +4
+3 -> 6 gives +3
+
+Total = 7
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
