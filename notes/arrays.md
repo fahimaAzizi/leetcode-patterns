@@ -314,3 +314,35 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+# Problem #13 - Majority Element
+
+## Pattern
+Arrays + Boyer-Moore Voting Algorithm
+
+## Key Idea
+Keep a candidate and a count.
+
+When the current number matches the candidate, increase
+the count.
+
+When it is different, decrease the count.
+
+If the count reaches zero, choose the next number as the
+new candidate.
+
+Because the majority element appears more than n/2 times,
+it will remain as the final candidate.
+
+## Algorithm
+1. Start with count = 0.
+2. If count is 0, make the current number the candidate.
+3. If the current number equals the candidate, increase count.
+4. Otherwise, decrease count.
+5. Return the final candidate.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
