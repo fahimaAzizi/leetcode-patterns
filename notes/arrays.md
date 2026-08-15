@@ -346,3 +346,50 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+# Problem #14 - Missing Number
+
+## Pattern
+Arrays + XOR
+
+## Key Idea
+Numbers from 0 to n should all appear once except one number.
+
+XOR has an important property:
+
+x ^ x = 0
+
+and
+
+x ^ 0 = x
+
+So when we XOR all expected numbers with all numbers
+actually present, the matching numbers cancel out and
+the missing number remains.
+
+## Algorithm
+1. Start with `result = n`.
+2. XOR every index with `result`.
+3. XOR every array value with `result`.
+4. All matching values cancel each other.
+5. The remaining value is the missing number.
+
+## Example
+
+nums = [3,0,1]
+
+Expected numbers:
+0,1,2,3
+
+Present numbers:
+3,0,1
+
+After XOR cancellation:
+
+Answer = 2
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
