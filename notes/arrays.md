@@ -393,3 +393,40 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+# Problem #15 - Find All Numbers Disappeared in an Array
+
+## Pattern
+Arrays + In-Place Hashing
+
+## Key Idea
+Every number is between 1 and n, so each number can be
+mapped to an array index.
+
+For each number:
+- Convert it to an index using `abs(num) - 1`.
+- Mark that index as visited by making its value negative.
+
+After marking:
+- Positive positions represent numbers that never appeared.
+
+## Algorithm
+1. Loop through every number.
+2. Convert the number to its corresponding index.
+3. Make the value at that index negative.
+4. Loop through the array again.
+5. If a value is still positive, its index + 1 is missing.
+6. Return the missing numbers.
+
+## Example
+
+nums = [4,3,2,7,8,2,3,1]
+
+Missing numbers:
+[5,6]
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1) extra space
