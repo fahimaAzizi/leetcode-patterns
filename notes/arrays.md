@@ -430,3 +430,37 @@ O(n)
 
 ## Space Complexity
 O(1) extra space
+
+# Problem #16 - Rotate Array
+
+## Pattern
+Arrays + Reverse
+
+## Key Idea
+Instead of moving each element one by one, use three reversals.
+
+For rotating right by k:
+
+1. Reverse the entire array.
+2. Reverse the first k elements.
+3. Reverse the remaining elements.
+
+## Example
+
+nums = [1,2,3,4,5,6,7]
+k = 3
+
+Reverse all:
+[7,6,5,4,3,2,1]
+
+Reverse first 3:
+[5,6,7,4,3,2,1]
+
+Reverse remaining:
+[5,6,7,1,2,3,4]
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
