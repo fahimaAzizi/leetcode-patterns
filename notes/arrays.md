@@ -501,3 +501,48 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+# Problem #18 - Check If N and Its Double Exist
+
+## Pattern
+Arrays + Hash Set
+
+## Key Idea
+For every number, check whether:
+- Its double has already appeared.
+- If the number is even, its half has already appeared.
+
+A hash set allows these checks in O(1) average time.
+
+## Algorithm
+1. Create an empty hash set.
+2. For each number:
+   - Check if `num * 2` already exists.
+   - If `num` is even, check if `num / 2` exists.
+3. If either condition is true, return true.
+4. Otherwise, add the number to the set.
+5. Return false if no pair exists.
+
+## Example
+
+arr = [10,2,5,3]
+
+When we reach 5:
+5 / 2 = 2.5, so that doesn't work.
+
+But when we process 2:
+2 * 2 = 4, not present.
+
+When we process 5:
+2 is already present and 5 = 2 * 2.5? No.
+
+Actually, the valid pair is:
+10 = 2 * 5
+
+So the answer is true.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(n)
