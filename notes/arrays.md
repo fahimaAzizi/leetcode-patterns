@@ -464,3 +464,40 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+# Problem #17 - Remove Element
+
+## Pattern
+Arrays + Two Pointers
+
+## Key Idea
+Use two pointers:
+- `right` checks every element.
+- `left` stores the position where the next valid element should go.
+
+If the current element is not equal to `val`, copy it to
+the `left` position and move `left`.
+
+## Algorithm
+1. Start `left = 0`.
+2. Traverse the array using `right`.
+3. If `nums[right]` is not equal to `val`, copy it to `nums[left]`.
+4. Increase `left`.
+5. Return `left`.
+
+## Example
+
+nums = [3,2,2,3]
+val = 3
+
+Result:
+[2,2]
+
+Return:
+2
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
