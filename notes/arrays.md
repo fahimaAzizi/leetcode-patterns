@@ -546,3 +546,33 @@ O(n)
 
 ## Space Complexity
 O(n)
+
+# Problem #19 - Valid Anagram
+
+## Pattern
+Hashing + Frequency Counting
+
+## Key Idea
+Two strings are anagrams if they contain the same characters
+with the same frequencies.
+
+Use an array of 26 integers to count the characters.
+
+For every character in `s`, increase its count.
+For every character in `t`, decrease its count.
+
+If every count becomes zero, the strings are anagrams.
+
+## Algorithm
+1. Check whether the strings have the same length.
+2. Create an array of 26 zeros.
+3. Increase the count for each character in `s`.
+4. Decrease the count for each character in `t`.
+5. Check whether all counts are zero.
+6. Return true if they are, otherwise false.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
