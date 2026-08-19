@@ -576,3 +576,38 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+# Problem #20 - Group Anagrams
+
+## Pattern
+Hashing + Sorting
+
+## Key Idea
+Anagrams become identical when their characters are sorted.
+
+For example:
+
+"eat" -> "aet"
+"tea" -> "aet"
+"ate" -> "aet"
+
+So we use the sorted word as the key in a hash map.
+
+## Algorithm
+1. Create a hash map.
+2. For every word:
+   - Make a copy of the word.
+   - Sort the copy.
+   - Use the sorted word as the key.
+   - Add the original word to that group.
+3. Convert the hash map values into the result.
+
+## Time Complexity
+O(n * k log k)
+
+Where:
+- n = number of words
+- k = maximum length of a word
+
+## Space Complexity
+O(n * k)
