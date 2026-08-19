@@ -611,3 +611,44 @@ Where:
 
 ## Space Complexity
 O(n * k)
+
+# Problem #21 - Longest Consecutive Sequence
+
+## Pattern
+Hash Set
+
+## Key Idea
+Put every number into a hash set so we can quickly check
+whether a number exists.
+
+A number can be the beginning of a sequence only when
+`num - 1` does not exist.
+
+Then keep checking:
+`num + 1`
+`num + 2`
+`num + 3`
+and so on.
+
+## Example
+
+nums = [100,4,200,1,3,2]
+
+The sequence starting at 1 is:
+
+1 → 2 → 3 → 4
+
+Length = 4
+
+## Algorithm
+1. Put all numbers into a hash set.
+2. For every number, check if `num - 1` exists.
+3. If it does not exist, this is the start of a sequence.
+4. Count consecutive numbers.
+5. Keep the largest length.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(n)
