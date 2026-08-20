@@ -701,3 +701,40 @@ O(n)
 
 ## Space Complexity
 O(n)
+
+# Problem #23 - Happy Number
+
+## Pattern
+Hash Set + Cycle Detection
+
+## Key Idea
+Repeatedly replace the number with the sum of the squares
+of its digits.
+
+If we reach 1, the number is happy.
+
+If a number repeats, we have entered a cycle, so the number
+will never reach 1.
+
+## Example
+
+n = 19
+
+19 → 82 → 68 → 100 → 1
+
+Therefore:
+true
+
+## Algorithm
+1. Create a hash set called `seen`.
+2. Calculate the sum of the squares of the digits.
+3. Store each result in the set.
+4. If the result becomes 1, return true.
+5. If a number repeats, a cycle exists.
+6. Return false.
+
+## Time Complexity
+O(log n)
+
+## Space Complexity
+O(log n)
