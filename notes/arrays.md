@@ -652,3 +652,52 @@ O(n)
 
 ## Space Complexity
 O(n)
+
+# Problem #22 - Top K Frequent Elements
+
+## Pattern
+Hash Map + Bucket Sort
+
+## Key Idea
+First count how many times each number appears.
+
+Then create buckets where the index represents the frequency.
+
+For example:
+
+frequency 3 → numbers that appear 3 times
+
+frequency 2 → numbers that appear 2 times
+
+Start from the highest-frequency bucket and collect numbers
+until we have k elements.
+
+## Example
+
+nums = [1,1,1,2,2,3]
+k = 2
+
+Frequency:
+1 → 3
+2 → 2
+3 → 1
+
+Highest frequencies:
+3 → 1
+2 → 2
+
+Answer:
+[1,2]
+
+## Algorithm
+1. Count each number using a hash map.
+2. Create frequency buckets.
+3. Put each number into its frequency bucket.
+4. Traverse buckets from highest to lowest.
+5. Add numbers until k elements are collected.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(n)
