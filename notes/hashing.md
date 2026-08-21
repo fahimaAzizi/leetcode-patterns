@@ -231,3 +231,48 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+# Problem #25 - Word Pattern
+
+## Pattern
+Hash Map + String
+
+## Key Idea
+Each pattern character must map to exactly one word.
+
+Also, each word must map to exactly one pattern character.
+
+Therefore, use two maps:
+- character → word
+- word → character
+
+## Example
+
+pattern = "abba"
+s = "dog cat cat dog"
+
+Mapping:
+
+a → dog
+b → cat
+
+So:
+
+a b b a
+dog cat cat dog
+
+The pattern is valid.
+
+## Algorithm
+1. Split the string into words.
+2. Check that the number of words equals the pattern length.
+3. Create two maps.
+4. Check both directions for every character and word.
+5. Return false if a mapping conflicts.
+6. Otherwise return true.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(n)
