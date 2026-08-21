@@ -738,3 +738,45 @@ O(log n)
 
 ## Space Complexity
 O(log n)
+
+# Problem #24 - Isomorphic Strings
+
+## Pattern
+Hash Map + String
+
+## Key Idea
+Each character from `s` must map to exactly one character
+in `t`.
+
+At the same time, two different characters from `s` cannot
+map to the same character in `t`.
+
+Therefore, we keep two mappings:
+- s → t
+- t → s
+
+## Example
+
+s = "egg"
+t = "add"
+
+Mapping:
+e → a
+g → d
+
+This is valid, so the answer is true.
+
+## Algorithm
+1. Create two mapping arrays.
+2. For each pair of characters:
+   - Check whether the existing mapping is consistent.
+   - Check the reverse mapping.
+3. Create both mappings.
+4. If a conflict occurs, return false.
+5. Otherwise return true.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
