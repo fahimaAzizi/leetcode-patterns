@@ -317,3 +317,50 @@ O(n)
 
 ## Space Complexity
 O(1)
+# Problem #27 - Ransom Note
+
+## Pattern
+Hashing + Frequency Counting
+
+## Key Idea
+Count how many times each letter appears in `magazine`.
+
+Then, for every letter needed by `ransomNote`, decrease
+its available count.
+
+If any count becomes negative, there are not enough letters.
+
+## Algorithm
+1. Create a frequency array of 26 zeros.
+2. Count all letters in `magazine`.
+3. Go through `ransomNote`.
+4. Decrease the count for each required letter.
+5. If a count becomes negative, return false.
+6. Otherwise return true.
+
+## Example
+
+ransomNote = "aa"
+magazine = "aab"
+
+Magazine counts:
+
+a → 2
+b → 1
+
+Use first `a`:
+a → 1
+
+Use second `a`:
+a → 0
+
+All letters are available.
+
+Answer:
+true
+
+## Time Complexity
+O(n + m)
+
+## Space Complexity
+O(1)
