@@ -276,3 +276,44 @@ O(n)
 
 ## Space Complexity
 O(n)
+
+# Problem #26 - First Unique Character in a String
+
+## Pattern
+Hashing + Frequency Counting
+
+## Key Idea
+First count how many times every character appears.
+
+Then scan the string from left to right.
+The first character whose frequency is 1 is the answer.
+
+## Algorithm
+1. Create a frequency array of size 26.
+2. Count every character in the string.
+3. Scan the string again.
+4. If a character has frequency 1, return its index.
+5. If no unique character exists, return -1.
+
+## Example
+
+s = "leetcode"
+
+Frequency:
+l → 1
+e → 3
+t → 1
+c → 1
+o → 1
+d → 1
+
+The first character with frequency 1 is `l`.
+
+Answer:
+0
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
