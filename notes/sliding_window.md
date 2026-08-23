@@ -120,3 +120,52 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+# Problem #30 - Permutation in String
+
+## Pattern
+Sliding Window + Frequency Counting
+
+## Key Idea
+A permutation contains exactly the same characters with
+the same frequencies.
+
+So we compare the character frequencies of `s1` with
+each window of the same length in `s2`.
+
+## Example
+
+s1 = "ab"
+s2 = "eidbaooo"
+
+Characters needed:
+
+a → 1
+b → 1
+
+Check windows of length 2:
+
+"ei"
+"id"
+"db"
+"ba" ← matches!
+
+Therefore:
+true
+
+## Algorithm
+1. Count the characters in `s1`.
+2. Create a window with the same length as `s1`.
+3. Count characters in the first window of `s2`.
+4. Compare the two frequency arrays.
+5. Move the window one position at a time.
+6. Add the new character.
+7. Remove the old character.
+8. If the frequencies match, return true.
+9. Otherwise return false.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
