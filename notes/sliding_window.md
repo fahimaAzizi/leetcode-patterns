@@ -76,3 +76,47 @@ O(n)
 
 ## Space Complexity
 O(n)
+
+# Problem #29 - Maximum Number of Vowels in a Substring of Given Length
+
+## Pattern
+Sliding Window
+
+## Key Idea
+We need to check every substring of length `k`.
+
+Instead of counting the vowels from scratch for every
+substring, maintain a sliding window.
+
+When the window moves:
+- Add the new character entering the window.
+- Remove the old character leaving the window.
+
+## Example
+
+s = "abciiidef"
+k = 3
+
+First window:
+"abc" → 1 vowel
+
+Move the window:
+"bci" → 1 vowel
+"cii" → 2 vowels
+"iii" → 3 vowels
+
+Maximum = 3
+
+## Algorithm
+1. Count vowels in the first `k` characters.
+2. Store this as the current maximum.
+3. Move the window one character at a time.
+4. Add the new character if it is a vowel.
+5. Remove the character that leaves the window if it is a vowel.
+6. Update the maximum.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
