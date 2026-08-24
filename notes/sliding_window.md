@@ -312,3 +312,67 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+# Problem #35 - Defuse the Bomb
+
+## Pattern
+Sliding Window + Circular Array
+
+## Key Idea
+The array is circular, meaning that after the last element
+we return to the first element.
+
+For positive k:
+- Add the next k elements.
+
+For negative k:
+- Add the previous k elements.
+
+For k = 0:
+- Every result is 0.
+
+Instead of calculating every sum from scratch, use a sliding
+window.
+
+## Example
+
+code = [5,7,1,4]
+k = 3
+
+For the first position, take the next 3:
+
+7 + 1 + 4 = 12
+
+For the second position:
+
+1 + 4 + 5 = 10
+
+For the third:
+
+4 + 5 + 7 = 16
+
+For the fourth:
+
+5 + 7 + 1 = 13
+
+Result:
+[12,10,16,13]
+
+## Important Idea
+
+Because the array is circular, we use `% n`.
+
+For example:
+
+index = 4
+n = 4
+
+4 % 4 = 0
+
+So index 4 refers back to index 0.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(n)
