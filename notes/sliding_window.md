@@ -28,3 +28,51 @@
 - Min Window Substring
 - Longest Repeating Character Replacement
 - Sliding Window Maximum
+
+
+# Problem #28 - Longest Substring Without Repeating Characters
+
+## Pattern
+Sliding Window + Hash Set
+
+## Key Idea
+Use a sliding window to keep a substring that contains
+no duplicate characters.
+
+- `left` = beginning of the window
+- `right` = end of the window
+
+When a duplicate appears, move `left` forward until the
+duplicate is removed.
+
+## Example
+
+s = "abcabcbb"
+
+First window:
+"abc" → length 3
+
+Next character is `a`, which is already inside the window.
+
+Move `left` forward until `a` is removed.
+
+Continue until the end.
+
+Answer:
+3
+
+## Algorithm
+1. Create a hash set.
+2. Start `left` at 0.
+3. Move `right` through the string.
+4. If the current character already exists:
+   - Remove the character at `left`.
+   - Move `left` forward.
+5. Add the current character to the set.
+6. Update the maximum window length.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(n)
