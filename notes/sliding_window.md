@@ -169,3 +169,53 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+
+# Problem #32 - Longest Repeating Character Replacement
+
+## Pattern
+Sliding Window + Frequency Counting
+
+## Key Idea
+We want the largest window that can be changed into one
+repeated character using at most k replacements.
+
+Inside the window:
+
+window length - most frequent character count
+= number of replacements needed
+
+If replacements > k, shrink the window.
+
+## Example
+
+s = "AABABBA"
+k = 1
+
+Window:
+"AABA"
+
+A appears 3 times.
+Window length = 4.
+
+Replacements needed:
+
+4 - 3 = 1
+
+Since k = 1, the window is valid.
+
+Answer = 4
+
+## Algorithm
+1. Use a frequency array to count characters.
+2. Expand the window with `right`.
+3. Track the most frequent character.
+4. Calculate how many replacements are needed.
+5. If replacements > k, move `left`.
+6. Track the largest valid window.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
