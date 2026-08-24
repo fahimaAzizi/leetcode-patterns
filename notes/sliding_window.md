@@ -262,3 +262,53 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+# Problem #34 - Maximum Average Subarray I
+
+## Pattern
+Sliding Window
+
+## Key Idea
+Every subarray must have exactly `k` elements.
+
+Since every window has the same length, the window with
+the largest sum will also have the largest average.
+
+Therefore, we only need to find the maximum sum.
+
+## Example
+
+nums = [1,12,-5,-6,50,3]
+k = 4
+
+First window:
+[1,12,-5,-6]
+sum = 2
+
+Next:
+[12,-5,-6,50]
+sum = 51
+
+Next:
+[-5,-6,50,3]
+sum = 42
+
+Maximum sum = 51
+
+Average:
+51 / 4 = 12.75
+
+## Algorithm
+1. Calculate the sum of the first k elements.
+2. Store it as the maximum sum.
+3. Move the window one position at a time.
+4. Add the new element.
+5. Remove the element leaving the window.
+6. Update the maximum sum.
+7. Divide the maximum sum by k.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
