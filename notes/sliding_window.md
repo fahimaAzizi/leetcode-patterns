@@ -219,3 +219,46 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+# Problem #33 - Find All Anagrams in a String
+
+## Pattern
+Sliding Window + Frequency Counting
+
+## Key Idea
+Anagrams have exactly the same character frequencies.
+
+The window must always have the same length as `p`.
+
+Compare the frequency of the current window with the
+frequency of `p`.
+
+## Example
+
+s = "cbaebabacd"
+p = "abc"
+
+Window length = 3
+
+"cba" → anagram → index 0
+"bae" → not an anagram
+...
+"bac" → anagram → index 6
+
+Answer:
+[0,6]
+
+## Algorithm
+1. Count characters in `p`.
+2. Create a window with the same length as `p`.
+3. Compare the window frequency with `p`.
+4. Move the window one position at a time.
+5. Add the new character.
+6. Remove the old character.
+7. If frequencies match, save the starting index.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
