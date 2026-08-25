@@ -388,3 +388,55 @@ O(n)
 ## Space Complexity
 
 O(n)
+# Problem #48 - Backspace String Compare
+
+## Pattern
+Two Pointers
+
+## Key Idea
+
+Instead of actually creating new strings after processing
+the backspaces, we start from the end of both strings.
+
+We use:
+
+- `i` to move through string `s`
+- `j` to move through string `t`
+- `skipS` to count characters that should be deleted
+- `skipT` to count characters that should be deleted
+
+## Example
+
+s = "ab#c"
+
+Starting from the end:
+
+c → valid
+
+# → delete one character
+
+b → deleted
+
+a → valid
+
+Final string:
+
+"ac"
+
+## Algorithm
+
+1. Start from the end of both strings.
+2. When we find `#`, increase the skip counter.
+3. Skip characters when the skip counter is greater than 0.
+4. Find the next valid character in both strings.
+5. Compare them.
+6. If they are different, return false.
+7. Continue until both strings are finished.
+
+## Time Complexity
+
+O(n + m)
+
+## Space Complexity
+
+O(1)
