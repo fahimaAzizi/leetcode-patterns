@@ -329,3 +329,62 @@ O(n²)
 ## Space Complexity
 
 O(1) excluding sorting
+# Problem #47 - Squares of a Sorted Array
+
+## Pattern
+Two Pointers
+
+## Key Idea
+
+The array is already sorted, but it can contain negative
+numbers.
+
+When we square negative numbers, they become positive.
+
+For example:
+
+[-4,-1,0,3,10]
+
+After squaring:
+
+[16,1,0,9,100]
+
+This is not sorted.
+
+The largest square must come from either:
+- the left side, or
+- the right side.
+
+So we use two pointers.
+
+## Algorithm
+
+1. Put `left` at the beginning.
+2. Put `right` at the end.
+3. Compare their squares.
+4. Put the larger square at the end of the result array.
+5. Move the pointer that produced the larger square.
+6. Continue until all positions are filled.
+
+## Example
+
+nums = [-4,-1,0,3,10]
+
+Compare:
+
+(-4)² = 16
+10² = 100
+
+100 is larger, so put it at the end.
+
+Then continue comparing until the result is:
+
+[0,1,9,16,100]
+
+## Time Complexity
+
+O(n)
+
+## Space Complexity
+
+O(n)
