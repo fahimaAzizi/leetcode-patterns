@@ -440,3 +440,60 @@ O(n + m)
 ## Space Complexity
 
 O(1)
+# Problem #49 - Reverse Vowels of a String
+
+## Pattern
+Two Pointers
+
+## Key Idea
+
+Use two pointers:
+
+- `left` starts from the beginning.
+- `right` starts from the end.
+
+Move both pointers until they find vowels.
+
+Then swap those vowels.
+
+Continue until the pointers meet.
+
+## Vowels
+
+a, e, i, o, u
+
+Both uppercase and lowercase vowels are included.
+
+## Example
+
+s = "hello"
+
+Vowels are:
+
+e, o
+
+Swap them:
+
+h o l l e
+
+Answer:
+
+"holle"
+
+## Algorithm
+
+1. Put `left` at the beginning.
+2. Put `right` at the end.
+3. Move `left` until it finds a vowel.
+4. Move `right` until it finds a vowel.
+5. Swap the two vowels.
+6. Move both pointers inward.
+7. Return the string.
+
+## Time Complexity
+
+O(n)
+
+## Space Complexity
+
+O(1)
