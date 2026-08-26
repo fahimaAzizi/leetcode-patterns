@@ -74,3 +74,49 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+# Problem #39 - Two Sum II: Input Array Is Sorted
+
+## Pattern
+Two Pointers
+
+## Key Idea
+Because the array is already sorted, we can use two pointers.
+
+- `left` starts at the beginning.
+- `right` starts at the end.
+
+Calculate their sum.
+
+If the sum is too small:
+Move `left` forward.
+
+If the sum is too large:
+Move `right` backward.
+
+If the sum equals the target:
+Return the indices.
+
+## Example
+
+numbers = [2,7,11,15]
+target = 9
+
+2 + 15 = 17
+
+17 is too large, so move right.
+
+2 + 11 = 13
+
+Still too large, so move right.
+
+2 + 7 = 9
+
+Answer:
+[1,2]
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
