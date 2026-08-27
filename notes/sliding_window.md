@@ -376,3 +376,53 @@ O(n)
 
 ## Space Complexity
 O(n)
+
+# Problem #36 - Subarray Product Less Than K
+
+## Pattern
+Sliding Window + Two Pointers
+
+## Key Idea
+Use a sliding window where the product of all elements
+must stay less than k.
+
+Expand the window using `right`.
+
+If the product becomes greater than or equal to k,
+shrink the window using `left`.
+
+After finding a valid window, count all valid subarrays
+ending at `right`.
+
+## Example
+
+nums = [10,5,2,6]
+k = 100
+
+Valid subarrays:
+
+[10]
+[5]
+[2]
+[6]
+[10,5]
+[5,2]
+[2,6]
+[5,2,6]
+
+Answer = 8
+
+## Algorithm
+1. Start with `left = 0`.
+2. Keep a running product.
+3. Expand the window with `right`.
+4. If product >= k, shrink from the left.
+5. Count valid subarrays using:
+
+right - left + 1
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
