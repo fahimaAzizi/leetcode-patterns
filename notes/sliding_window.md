@@ -426,3 +426,50 @@ O(n)
 
 ## Space Complexity
 O(1)
+
+# Problem #37 - Minimum Window Substring
+
+## Pattern
+Sliding Window + Hash Map
+
+## Key Idea
+Find the smallest substring in `s` that contains all the
+characters from `t`.
+
+We use:
+- `need` to count characters required.
+- `window` to count characters in the current window.
+
+When the window contains everything we need, try to shrink
+it from the left.
+
+## Example
+
+s = "ADOBECODEBANC"
+t = "ABC"
+
+A valid window:
+
+"ADOBEC"
+
+Later we find a smaller window:
+
+"BANC"
+
+Answer:
+
+"BANC"
+
+## Algorithm
+1. Count characters in `t`.
+2. Expand the window using `right`.
+3. Track characters inside the current window.
+4. When all requirements are satisfied, the window is valid.
+5. Try to shrink it using `left`.
+6. Save the smallest valid window.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(n)
