@@ -404,3 +404,48 @@ O(n)
 
 ## Space Complexity
 O(n)
+# Problem #40 - Subarray Sum Equals K
+
+## Pattern
+Prefix Sum + Hash Map
+
+## Key Idea
+If the current prefix sum is `prefixSum`, we need to find
+an earlier prefix sum equal to:
+
+prefixSum - k
+
+Because:
+
+current prefix sum - previous prefix sum = k
+
+## Example
+
+nums = [1,1,1]
+k = 2
+
+Prefix sums:
+
+0
+1
+2 → found previous 0
+3 → found previous 1
+
+There are two subarrays with sum 2.
+
+Answer = 2
+
+## Algorithm
+1. Create a hash map for prefix sum frequencies.
+2. Set prefixCount[0] = 1.
+3. Keep a running prefix sum.
+4. Calculate `prefixSum - k`.
+5. If that value exists, add its frequency to the answer.
+6. Store the current prefix sum.
+7. Return the answer.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(n)
