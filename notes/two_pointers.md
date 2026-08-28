@@ -161,3 +161,60 @@ O(n)
 
 ## Space Complexity
 O(1)
+# Problem #44 - Container With Most Water
+
+## Pattern
+Two Pointers
+
+## Key Idea
+The amount of water depends on:
+
+Area = width × minimum height
+
+Use two pointers:
+- `left` at the beginning
+- `right` at the end
+
+Calculate the area and move the pointer with the smaller
+height inward.
+
+## Why move the smaller height?
+
+The smaller height limits the amount of water.
+
+Moving the taller height cannot increase the limiting height,
+so we move the smaller one and hope to find a taller line.
+
+## Example
+
+height = [1,8,6,2,5,4,8,3,7]
+
+The maximum area is between:
+
+8 and 7
+
+Width = 7
+Height = 7
+
+Area:
+
+7 × 7 = 49
+
+Answer:
+49
+
+## Algorithm
+1. Put `left` at the first position.
+2. Put `right` at the last position.
+3. Calculate width.
+4. Find the smaller height.
+5. Calculate the area.
+6. Update the maximum area.
+7. Move the pointer with the smaller height.
+8. Continue until pointers meet.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
