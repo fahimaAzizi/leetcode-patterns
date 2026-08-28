@@ -120,3 +120,44 @@ O(n)
 
 ## Space Complexity
 O(1)
+# Problem #41 - Move Zeroes
+
+## Pattern
+Two Pointers
+
+## Key Idea
+Use one pointer to find non-zero elements and another
+pointer to show where the next non-zero element should go.
+
+The `insertPosition` pointer keeps track of where we should
+place the next non-zero number.
+
+## Example
+
+nums = [0,1,0,3,12]
+
+Move non-zero numbers forward:
+
+1 → first position
+
+3 → second position
+
+12 → third position
+
+Result:
+
+[1,3,12,0,0]
+
+## Algorithm
+1. Set `insertPosition = 0`.
+2. Loop through the array.
+3. If the current number is not zero:
+   - Swap it with the number at `insertPosition`.
+   - Move `insertPosition` forward.
+4. Continue until the end.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
