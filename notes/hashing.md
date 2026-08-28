@@ -364,3 +364,43 @@ O(n + m)
 
 ## Space Complexity
 O(1)
+# Problem #39 - Binary Subarrays With Sum
+
+## Pattern
+Prefix Sum + Hash Map
+
+## Key Idea
+Use a prefix sum to keep track of the sum from the beginning
+of the array.
+
+If:
+
+prefixSum - goal
+
+has appeared before, then the subarray between that previous
+position and the current position has a sum equal to `goal`.
+
+## Example
+
+nums = [1,0,1,0,1]
+goal = 2
+
+The answer is 4.
+
+## Algorithm
+1. Create a hash map to store prefix sum frequencies.
+2. Start with prefixCount[0] = 1.
+3. Add each number to prefixSum.
+4. Calculate:
+
+needed = prefixSum - goal
+
+5. If `needed` appeared before, add its frequency to result.
+6. Store the current prefixSum.
+7. Return result.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(n)
