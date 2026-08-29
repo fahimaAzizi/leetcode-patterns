@@ -557,3 +557,68 @@ O(n)
 ## Space Complexity
 
 O(1)
+
+# Problem #51 - Valid Word Abbreviation
+
+## Pattern
+Two Pointers + String Parsing
+
+## Key Idea
+
+Use two pointers:
+
+- `i` moves through the original word.
+- `j` moves through the abbreviation.
+
+If we see a letter in the abbreviation, it must match the
+current letter in the word.
+
+If we see a number, that number tells us how many characters
+to skip in the word.
+
+## Example
+
+word = "internationalization"
+
+abbr = "i12iz4n"
+
+Start:
+
+i matches i
+
+Then:
+
+12
+
+means skip 12 characters.
+
+Continue checking the remaining letters and numbers.
+
+## Important Rule
+
+A number cannot start with 0.
+
+For example:
+
+"w01d"
+
+is not a valid abbreviation.
+
+## Algorithm
+
+1. Create two pointers.
+2. If the abbreviation has a letter:
+   - Check that it matches the word.
+3. If the abbreviation has a number:
+   - Read the complete number.
+   - Skip that many characters in the word.
+4. Continue until both strings finish.
+5. Return true only if both finish at the same time.
+
+## Time Complexity
+
+O(n)
+
+## Space Complexity
+
+O(1)
