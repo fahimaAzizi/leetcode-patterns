@@ -497,3 +497,63 @@ O(n)
 ## Space Complexity
 
 O(1)
+
+# Problem #50 - Is Subsequence
+
+## Pattern
+Two Pointers
+
+## Key Idea
+
+A subsequence means the characters must appear in the same
+order, but they do not need to be next to each other.
+
+Use two pointers:
+
+- `i` moves through string `s`
+- `j` moves through string `t`
+
+When the characters match, move both pointers forward.
+
+When they don't match, only move the pointer in `t`.
+
+## Example
+
+s = "abc"
+
+t = "ahbgdc"
+
+Compare:
+
+a = a ✅
+
+b does not equal h ❌
+Keep looking.
+
+b = b ✅
+
+c does not equal g ❌
+Keep looking.
+
+c = c ✅
+
+All characters from `s` were found in order.
+
+Answer:
+true
+
+## Algorithm
+
+1. Start both pointers at 0.
+2. Compare `s[i]` with `t[j]`.
+3. If they match, move `i`.
+4. Always move `j`.
+5. If `i` reaches the end of `s`, return true.
+
+## Time Complexity
+
+O(n)
+
+## Space Complexity
+
+O(1)
