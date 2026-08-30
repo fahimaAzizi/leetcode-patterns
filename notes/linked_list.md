@@ -31,3 +31,53 @@
 - Merge Two Sorted Lists
 - Remove Nth Node From End of List
 - Palindrome Linked List
+
+
+# Problem #52 - Linked List Cycle
+
+## Pattern
+Fast & Slow Pointers
+
+## Key Idea
+
+Use two pointers:
+
+- `slow` moves one step at a time.
+- `fast` moves two steps at a time.
+
+If there is a cycle, the fast pointer will eventually catch
+the slow pointer.
+
+If there is no cycle, the fast pointer will reach the end.
+
+## Example
+
+1 -> 2 -> 3 -> 4
+     ^         |
+     |_________|
+
+Slow moves:
+
+1 -> 2 -> 3 -> 4
+
+Fast moves twice as quickly.
+
+Eventually, they meet inside the cycle.
+
+That means there is a cycle.
+
+## Algorithm
+
+1. Set `slow` and `fast` to `head`.
+2. Move `slow` one step.
+3. Move `fast` two steps.
+4. If they meet, return true.
+5. If `fast` reaches the end, return false.
+
+## Time Complexity
+
+O(n)
+
+## Space Complexity
+
+O(1)
