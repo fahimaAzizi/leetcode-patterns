@@ -148,3 +148,65 @@ O(n)
 ## Space Complexity
 
 O(1)
+
+# Problem #54 - Reverse Linked List
+
+## Pattern
+Linked List
+
+## Key Idea
+
+To reverse a linked list, we need three pointers:
+
+- `previous`
+- `current`
+- `nextNode`
+
+We reverse one connection at a time.
+
+## Example
+
+Original:
+
+1 -> 2 -> 3 -> 4 -> 5
+
+After reversing:
+
+5 -> 4 -> 3 -> 2 -> 1
+
+## How It Works
+
+At the beginning:
+
+previous = nullptr
+
+current = 1
+
+First, save the next node:
+
+nextNode = current->next
+
+Then reverse the connection:
+
+current->next = previous
+
+Move both pointers forward and repeat.
+
+## Algorithm
+
+1. Set `previous` to nullptr.
+2. Set `current` to head.
+3. Save the next node.
+4. Reverse the current connection.
+5. Move `previous` forward.
+6. Move `current` forward.
+7. Continue until the list ends.
+8. Return `previous`.
+
+## Time Complexity
+
+O(n)
+
+## Space Complexity
+
+O(1)
