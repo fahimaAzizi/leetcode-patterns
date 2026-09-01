@@ -210,3 +210,78 @@ O(n)
 ## Space Complexity
 
 O(1)
+
+# Problem #55 - Merge Two Sorted Lists
+
+## Pattern
+Linked List
+
+## Key Idea
+
+We have two linked lists that are already sorted.
+
+We compare the current node from both lists and always take
+the smaller value.
+
+We continue until one list is finished.
+
+Then we connect the remaining part of the other list.
+
+## Example
+
+list1:
+
+1 -> 2 -> 4
+
+list2:
+
+1 -> 3 -> 4
+
+Compare:
+
+1 and 1 → take 1
+
+2 and 1 → take 1
+
+2 and 3 → take 2
+
+4 and 3 → take 3
+
+4 and 4 → take 4
+
+Add the remaining 4.
+
+Result:
+
+1 -> 1 -> 2 -> 3 -> 4 -> 4
+
+## Dummy Node
+
+We use a dummy node to make building the new linked list
+easier.
+
+dummy -> 1 -> 1 -> 2 -> 3 -> 4 -> 4
+
+At the end, we return:
+
+dummy.next
+
+because the dummy node itself is not part of the answer.
+
+## Algorithm
+
+1. Create a dummy node.
+2. Compare the current nodes of both lists.
+3. Connect the smaller node to the result.
+4. Move forward in that list.
+5. Repeat until one list ends.
+6. Connect the remaining nodes.
+7. Return `dummy.next`.
+
+## Time Complexity
+
+O(n + m)
+
+## Space Complexity
+
+O(1)
