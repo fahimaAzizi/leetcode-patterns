@@ -274,3 +274,58 @@ O(n²)
 ## Space Complexity
 
 O(1) excluding the output.
+
+# Problem #46 - Valid Triangle Number
+
+## Pattern
+Sorting + Two Pointers
+
+## Key Idea
+
+Three sides can form a triangle when:
+
+a + b > c
+
+After sorting the array, we choose the largest side `c`.
+
+Then we use two pointers to find pairs where:
+
+nums[left] + nums[right] > nums[k]
+
+## Example
+
+nums = [2,2,3,4]
+
+After sorting:
+
+[2,2,3,4]
+
+Possible valid triangles:
+
+[2,2,3] ✅
+[2,3,4] ✅
+[2,3,4] ✅
+
+Answer = 3
+
+## Algorithm
+
+1. Sort the array.
+2. Start with the largest number as the third side.
+3. Put `left` at the beginning.
+4. Put `right` before the largest side.
+5. Check if:
+
+nums[left] + nums[right] > nums[k]
+
+6. If true, count all possible values between left and right.
+7. If false, move `left` forward.
+8. Continue until all possibilities are checked.
+
+## Time Complexity
+
+O(n²)
+
+## Space Complexity
+
+O(1) excluding sorting
