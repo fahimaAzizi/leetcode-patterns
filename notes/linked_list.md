@@ -285,3 +285,71 @@ O(n + m)
 ## Space Complexity
 
 O(1)
+# Problem #56 - Remove Nth Node From End of List
+
+## Pattern
+Two Pointers + Linked List
+
+## Key Idea
+
+We use two pointers:
+
+- `fast`
+- `slow`
+
+First, move the `fast` pointer ahead.
+
+Then move both pointers together.
+
+When `fast` reaches the end, `slow` will be right before
+the node we need to remove.
+
+## Example
+
+List:
+
+1 -> 2 -> 3 -> 4 -> 5
+
+n = 2
+
+We need to remove:
+
+4
+
+Result:
+
+1 -> 2 -> 3 -> 5
+
+## Why Use a Dummy Node?
+
+The dummy node helps us handle situations where we need to
+remove the first node.
+
+Example:
+
+1 -> 2
+
+n = 2
+
+We need to remove `1`.
+
+Using a dummy node makes this easier.
+
+## Algorithm
+
+1. Create a dummy node before `head`.
+2. Set `fast` and `slow` to the dummy node.
+3. Move `fast` ahead by `n + 1` positions.
+4. Move both pointers together.
+5. When `fast` reaches the end, `slow` is before the node
+   we want to remove.
+6. Skip that node.
+7. Return `dummy.next`.
+
+## Time Complexity
+
+O(n)
+
+## Space Complexity
+
+O(1)
