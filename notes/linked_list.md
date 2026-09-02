@@ -353,3 +353,63 @@ O(n)
 ## Space Complexity
 
 O(1)
+
+# Problem #57 - Palindrome Linked List
+
+## Pattern
+
+Fast & Slow Pointers + Linked List
+
+## Key Idea
+
+A palindrome reads the same from both directions.
+
+For example:
+
+1 -> 2 -> 2 -> 1
+
+To solve this efficiently:
+
+1. Find the middle of the linked list.
+2. Reverse the second half.
+3. Compare the first half with the reversed second half.
+
+## Example
+
+Original list:
+
+1 -> 2 -> 2 -> 1
+
+Find the middle.
+
+Then reverse the second half:
+
+1 -> 2
+
+becomes:
+
+2 -> 1
+
+Now compare:
+
+1 == 1 ✅
+
+2 == 2 ✅
+
+So the list is a palindrome.
+
+## Algorithm
+
+1. Use slow and fast pointers to find the middle.
+2. Reverse the second half of the list.
+3. Compare the first half and second half.
+4. If all values match, return true.
+5. Otherwise, return false.
+
+## Time Complexity
+
+O(n)
+
+## Space Complexity
+
+O(1)
