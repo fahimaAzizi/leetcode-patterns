@@ -471,3 +471,75 @@ O(n + m)
 ## Space Complexity
 
 O(1)
+
+# Problem #59 - Add Two Numbers
+
+## Pattern
+
+Linked List + Math
+
+## Key Idea
+
+The numbers are stored in reverse order.
+
+For example:
+
+2 -> 4 -> 3
+
+represents:
+
+342
+
+We add the numbers one digit at a time, just like normal
+addition.
+
+We also keep track of the `carry`.
+
+## Example
+
+l1 = 2 -> 4 -> 3
+
+l2 = 5 -> 6 -> 4
+
+Step 1:
+
+2 + 5 = 7
+
+Step 2:
+
+4 + 6 = 10
+
+Write 0 and carry 1.
+
+Step 3:
+
+3 + 4 + 1 = 8
+
+Result:
+
+7 -> 0 -> 8
+
+## Important Formula
+
+carry = sum / 10
+
+digit = sum % 10
+
+## Algorithm
+
+1. Create a dummy node.
+2. Start `carry` at 0.
+3. Add the current values from both lists.
+4. Add the carry.
+5. Create a new node using `sum % 10`.
+6. Update carry using `sum / 10`.
+7. Continue until both lists and the carry are finished.
+8. Return `dummy.next`.
+
+## Time Complexity
+
+O(max(n, m))
+
+## Space Complexity
+
+O(max(n, m))
