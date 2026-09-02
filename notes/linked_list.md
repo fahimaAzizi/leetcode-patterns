@@ -413,3 +413,61 @@ O(n)
 ## Space Complexity
 
 O(1)
+
+# Problem #58 - Intersection of Two Linked Lists
+
+## Pattern
+
+Linked List + Two Pointers
+
+## Key Idea
+
+Use two pointers:
+
+- `pointerA` starts at List A.
+- `pointerB` starts at List B.
+
+When `pointerA` reaches the end of List A, move it to the
+beginning of List B.
+
+When `pointerB` reaches the end of List B, move it to the
+beginning of List A.
+
+This makes both pointers travel the same total distance.
+
+If the lists intersect, they will meet at the intersection.
+
+If they do not intersect, both pointers will eventually become
+`nullptr`.
+
+## Example
+
+List A:
+
+4 -> 1 -> 8 -> 4 -> 5
+
+List B:
+
+5 -> 6 -> 1 -> 8 -> 4 -> 5
+
+The lists intersect at:
+
+8
+
+## Algorithm
+
+1. Create two pointers.
+2. Start one at List A.
+3. Start the other at List B.
+4. Move both pointers forward.
+5. When a pointer reaches the end, move it to the other list.
+6. Continue until the pointers are equal.
+7. Return the intersection node.
+
+## Time Complexity
+
+O(n + m)
+
+## Space Complexity
+
+O(1)
