@@ -547,3 +547,51 @@ O(n)
 ## Space Complexity
 O(n)
 
+# Problem #61 - Binary Search
+
+## Pattern
+Binary Search
+
+## Key Idea
+
+Binary Search works on a sorted array.
+
+Instead of checking every element, we check the middle
+element and eliminate half of the array each time.
+
+## Example
+
+nums = [-1,0,3,5,9,12]
+target = 9
+
+Middle = 5
+
+9 is greater than 5, so ignore the left half.
+
+Now search:
+
+[9,12]
+
+Middle = 9
+
+Found the target.
+
+Answer = 4
+
+## Algorithm
+
+1. Set `left` to the first index.
+2. Set `right` to the last index.
+3. Find the middle.
+4. If the middle value equals target, return its index.
+5. If the middle value is smaller than target, search the right half.
+6. Otherwise, search the left half.
+7. If the target is not found, return -1.
+
+## Time Complexity
+
+O(log n)
+
+## Space Complexity
+
+O(1)
