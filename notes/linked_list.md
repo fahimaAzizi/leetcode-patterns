@@ -543,3 +543,71 @@ O(max(n, m))
 ## Space Complexity
 
 O(max(n, m))
+
+
+# Problem #60 - Remove Duplicates from Sorted List
+
+## Pattern
+
+Linked List
+
+## Key Idea
+
+The linked list is already sorted.
+
+This means duplicate values will always be next to each other.
+
+We compare:
+
+current->val
+
+with:
+
+current->next->val
+
+If they are equal, remove the next node.
+
+## Example
+
+Input:
+
+1 -> 1 -> 2 -> 3 -> 3
+
+Compare the first two nodes:
+
+1 == 1
+
+Remove the duplicate:
+
+1 -> 2 -> 3 -> 3
+
+Continue.
+
+Then:
+
+3 == 3
+
+Remove the duplicate.
+
+Final result:
+
+1 -> 2 -> 3
+
+## Algorithm
+
+1. Start at the head.
+2. Compare the current node with the next node.
+3. If they have the same value:
+   - Remove the next node.
+4. Otherwise:
+   - Move to the next node.
+5. Continue until the list ends.
+6. Return the head.
+
+## Time Complexity
+
+O(n)
+
+## Space Complexity
+
+O(1)
