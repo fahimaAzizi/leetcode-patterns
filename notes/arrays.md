@@ -595,3 +595,25 @@ O(log n)
 ## Space Complexity
 
 O(1)
+## Search Insert Position
+
+LeetCode #35
+
+Search Insert Position uses Binary Search because the array is sorted.
+
+We check the middle element:
+- If it equals the target, return its index.
+- If it is smaller than the target, search the right half.
+- If it is larger, search the left half.
+
+If the target is not found, the `left` pointer ends up at the exact
+position where the target should be inserted.
+
+Example:
+nums = [1,3,5,6]
+target = 2
+
+The answer is 1 because 2 should be inserted before 3.
+
+Time Complexity: O(log n)
+Space Complexity: O(1)
