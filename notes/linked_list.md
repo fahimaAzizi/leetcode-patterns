@@ -611,3 +611,57 @@ O(n)
 ## Space Complexity
 
 O(1)
+# Problem #60 - Odd Even Linked List
+
+## Pattern
+
+Linked List
+
+## Key Idea
+
+We need to separate nodes based on their position:
+
+Odd positions:
+1st, 3rd, 5th...
+
+Even positions:
+2nd, 4th, 6th...
+
+Then connect all odd-positioned nodes first, followed by all
+even-positioned nodes.
+
+## Example
+
+Original:
+
+1 -> 2 -> 3 -> 4 -> 5
+
+Odd-positioned nodes:
+
+1 -> 3 -> 5
+
+Even-positioned nodes:
+
+2 -> 4
+
+Final result:
+
+1 -> 3 -> 5 -> 2 -> 4
+
+## Algorithm
+
+1. Create an `odd` pointer starting at the first node.
+2. Create an `even` pointer starting at the second node.
+3. Save the beginning of the even list.
+4. Connect all odd-positioned nodes.
+5. Connect all even-positioned nodes.
+6. Connect the odd list to the beginning of the even list.
+7. Return the head.
+
+## Time Complexity
+
+O(n)
+
+## Space Complexity
+
+O(1)
