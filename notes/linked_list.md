@@ -665,3 +665,67 @@ O(n)
 ## Space Complexity
 
 O(1)
+# Problem #62 - Rotate List
+
+## Pattern
+
+Linked List
+
+## Key Idea
+
+We need to rotate the linked list to the right.
+
+Example:
+
+1 -> 2 -> 3 -> 4 -> 5
+
+k = 2
+
+The last 2 nodes move to the front:
+
+4 -> 5 -> 1 -> 2 -> 3
+
+## Important Step
+
+First, find the length of the linked list.
+
+Then calculate:
+
+k = k % length
+
+This avoids unnecessary rotations.
+
+For example:
+
+length = 5
+k = 7
+
+7 % 5 = 2
+
+So rotating 7 times is the same as rotating 2 times.
+
+## Clever Idea
+
+Connect the last node back to the first node to make the
+list circular.
+
+Then find the new tail and break the circle.
+
+## Algorithm
+
+1. Find the length of the list.
+2. Find the last node.
+3. Calculate `k % length`.
+4. Connect the last node to the head.
+5. Find the new tail.
+6. The node after the new tail becomes the new head.
+7. Break the circular connection.
+8. Return the new head.
+
+## Time Complexity
+
+O(n)
+
+## Space Complexity
+
+O(1)
