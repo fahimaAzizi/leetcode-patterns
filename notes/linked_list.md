@@ -814,3 +814,33 @@ O(1)
 ### Key Lesson
 A linked list can be reordered efficiently by combining
 the fast/slow pointer technique, list reversal, and merging.
+
+## Copy List with Random Pointer — LeetCode #138
+
+### Pattern
+Linked List + Hash Map
+
+### Idea
+Create a copy of every node and store the relationship:
+
+original node → copied node
+
+Then use the map to connect the `next` and `random`
+pointers of the copied nodes.
+
+### Steps
+1. Create all copied nodes.
+2. Store them in a hash map.
+3. Connect next pointers.
+4. Connect random pointers.
+5. Return the copied head.
+
+### Time Complexity
+O(n)
+
+### Space Complexity
+O(n)
+
+### Key Lesson
+A hash map can help keep track of which copied node
+belongs to each original node.
