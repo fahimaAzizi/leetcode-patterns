@@ -785,3 +785,32 @@ O(1)
 ## Important
 
 The node to delete will never be the last node.
+
+## Reorder List — LeetCode #143
+
+### Pattern
+Linked List + Fast/Slow Pointers + Reversal
+
+### Idea
+Reorder the list by:
+1. Finding the middle.
+2. Reversing the second half.
+3. Merging the two halves alternately.
+
+Example:
+
+1 → 2 → 3 → 4 → 5
+
+Becomes:
+
+1 → 5 → 2 → 4 → 3
+
+### Time Complexity
+O(n)
+
+### Space Complexity
+O(1)
+
+### Key Lesson
+A linked list can be reordered efficiently by combining
+the fast/slow pointer technique, list reversal, and merging.
