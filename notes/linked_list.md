@@ -729,3 +729,59 @@ O(n)
 ## Space Complexity
 
 O(1)
+
+# Problem #63 - Delete Node in a Linked List
+
+## Pattern
+
+Linked List
+
+## Key Idea
+
+Normally, to delete a node, we need the previous node.
+
+But this problem does NOT give us the previous node.
+
+Instead, we copy the value from the next node into the
+current node, then remove the next node.
+
+## Example
+
+Original:
+
+4 -> 5 -> 1 -> 9
+
+We need to delete 5.
+
+Copy 1 into the node containing 5:
+
+4 -> 1 -> 1 -> 9
+
+Then skip the duplicate 1:
+
+4 -> 1 -> 9
+
+The result is correct.
+
+## Algorithm
+
+1. Copy the next node's value into the current node.
+2. Make the current node point to the node after the next node.
+3. The next node is effectively removed.
+
+## Code
+
+node->val = node->next->val;
+node->next = node->next->next;
+
+## Time Complexity
+
+O(1)
+
+## Space Complexity
+
+O(1)
+
+## Important
+
+The node to delete will never be the last node.
