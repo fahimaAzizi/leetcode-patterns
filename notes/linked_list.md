@@ -1009,3 +1009,42 @@ O(n)
 A hash map gives fast lookup, while a doubly linked
 list gives fast insertion and deletion.
 Together they can implement an O(1) LRU Cache.
+
+## Merge k Sorted Lists — LeetCode #23
+
+### Pattern
+Linked List + Divide and Conquer
+
+### Idea
+Instead of merging all lists at the same time,
+divide the lists into smaller groups and merge
+two lists at a time.
+
+Example:
+
+1 → 4 → 5
+1 → 3 → 4
+2 → 6
+
+Final result:
+
+1 → 1 → 2 → 3 → 4 → 4 → 5 → 6
+
+### Steps
+1. Divide the lists into two groups.
+2. Recursively merge each group.
+3. Merge the two resulting lists.
+4. Continue until all lists are combined.
+
+### Time Complexity
+O(N log k)
+
+N = total number of nodes
+k = number of linked lists
+
+### Space Complexity
+O(log k) because of recursion.
+
+### Key Lesson
+Divide and conquer can make merging many sorted
+linked lists much more efficient.
