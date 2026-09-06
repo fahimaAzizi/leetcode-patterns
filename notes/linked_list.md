@@ -973,3 +973,39 @@ O(n)
 ### Key Lesson
 A doubly linked list is useful when we need to
 move both backward and forward.
+
+## LRU Cache — LeetCode #146
+
+### Pattern
+Hash Map + Doubly Linked List
+
+### Idea
+Use a hash map to find keys quickly and a doubly linked
+list to keep track of which item was recently used.
+
+The head represents the most recently used item.
+The tail represents the least recently used item.
+
+### Operations
+
+get(key):
+- Find the node using the hash map.
+- Move it to the front.
+- Return its value.
+
+put(key, value):
+- If the key exists, update it and move it to the front.
+- If it is new, add it to the front.
+- If the cache is too large, remove the item at the back.
+
+### Time Complexity
+get: O(1)
+put: O(1)
+
+### Space Complexity
+O(n)
+
+### Key Lesson
+A hash map gives fast lookup, while a doubly linked
+list gives fast insertion and deletion.
+Together they can implement an O(1) LRU Cache.
