@@ -882,3 +882,45 @@ O(1)
 ### Key Lesson
 A multilevel linked list can be flattened by
 carefully changing the next, prev, and child pointers.
+
+## Design Linked List — LeetCode #707
+
+### Pattern
+Linked List + Data Structure Design
+
+### Idea
+Create our own linked list using a Node structure.
+Each node stores a value and a pointer to the next node.
+
+The class supports:
+- get()
+- addAtHead()
+- addAtTail()
+- addAtIndex()
+- deleteAtIndex()
+
+### Important Concept
+To insert or delete a node, we need to correctly
+change the next pointers.
+
+Example:
+
+1 → 3
+
+Add 2 at index 1:
+
+1 → 2 → 3
+
+### Time Complexity
+get: O(n)
+addAtHead: O(1)
+addAtTail: O(n)
+addAtIndex: O(n)
+deleteAtIndex: O(n)
+
+### Space Complexity
+O(n)
+
+### Key Lesson
+A linked list is built by connecting nodes with pointers.
+Careful pointer manipulation is the main skill in this problem.
