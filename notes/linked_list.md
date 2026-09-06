@@ -924,3 +924,52 @@ O(n)
 ### Key Lesson
 A linked list is built by connecting nodes with pointers.
 Careful pointer manipulation is the main skill in this problem.
+
+## Design Browser History — LeetCode #1472
+
+### Pattern
+Doubly Linked List
+
+### Idea
+Use a doubly linked list where every page has:
+- prev → previous page
+- next → next page
+
+The current pointer tells us which page we are currently on.
+
+### Operations
+
+visit(url):
+Creates a new node and removes the old forward history.
+
+back(steps):
+Move through prev pointers.
+
+forward(steps):
+Move through next pointers.
+
+### Example
+
+google → facebook → youtube
+
+After back(1):
+
+google ← facebook
+
+If we visit github:
+
+google → facebook → github
+
+The old forward page, youtube, is removed.
+
+### Time Complexity
+visit: O(1)
+back: O(steps)
+forward: O(steps)
+
+### Space Complexity
+O(n)
+
+### Key Lesson
+A doubly linked list is useful when we need to
+move both backward and forward.
