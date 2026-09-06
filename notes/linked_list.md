@@ -844,3 +844,41 @@ O(n)
 ### Key Lesson
 A hash map can help keep track of which copied node
 belongs to each original node.
+
+## Flatten a Multilevel Doubly Linked List — LeetCode #430
+
+### Pattern
+Linked List + Recursion/Traversal
+
+### Idea
+If a node has a child list, insert that child list
+between the current node and its original next node.
+
+Example:
+
+1 ⇄ 2 ⇄ 3 ⇄ 4
+        |
+        7 ⇄ 8 ⇄ 9
+
+Becomes:
+
+1 ⇄ 2 ⇄ 3 ⇄ 7 ⇄ 8 ⇄ 9 ⇄ 4
+
+### Steps
+1. Check every node.
+2. If it has a child, save its next node.
+3. Connect the child list.
+4. Find the end of the child list.
+5. Connect it to the saved next node.
+6. Remove the child pointer.
+
+### Time Complexity
+O(n²) in this implementation because we may
+traverse the child list to find its tail.
+
+### Space Complexity
+O(1)
+
+### Key Lesson
+A multilevel linked list can be flattened by
+carefully changing the next, prev, and child pointers.
