@@ -107,3 +107,33 @@ O(n)
 ### Key Lesson
 A stack is useful when an expression needs to process
 values in last-in-first-out order.
+
+## Car Fleet — LeetCode #853
+
+### Pattern
+Sorting + Stack
+
+### Idea
+Calculate the time each car needs to reach the target.
+
+Time:
+
+(target - position) / speed
+
+Sort cars by position from closest to farthest.
+
+If a car behind takes less or equal time than the
+fleet in front, it will catch that fleet.
+
+If it takes more time, it becomes a new fleet.
+
+### Time Complexity
+O(n log n)
+
+### Space Complexity
+O(n)
+
+### Key Lesson
+A stack can help keep track of groups that cannot
+pass each other. Sorting lets us process the cars
+in the correct order.
