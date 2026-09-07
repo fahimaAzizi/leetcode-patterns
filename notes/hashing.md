@@ -449,3 +449,36 @@ O(n)
 
 ## Space Complexity
 O(n)
+## Longest Consecutive Sequence — LeetCode #128
+
+### Pattern
+Hashing
+
+### Idea
+Put all numbers into an unordered_set so we can search
+for numbers in O(1) average time.
+
+A number is the start of a sequence if num - 1 does not
+exist in the set.
+
+Then keep checking num + 1, num + 2, etc.
+
+### Example
+
+[100, 4, 200, 1, 3, 2]
+
+Longest sequence:
+
+1 → 2 → 3 → 4
+
+Answer = 4
+
+### Time Complexity
+O(n) average
+
+### Space Complexity
+O(n)
+
+### Key Lesson
+A hash set allows us to quickly check whether the next
+number exists without sorting the array.

@@ -1049,38 +1049,3 @@ O(log k) because of recursion.
 Divide and conquer can make merging many sorted
 linked lists much more efficient.
 
-## Remove Duplicates from Sorted Array — LeetCode #26
-
-### Pattern
-Two Pointers
-
-### Idea
-Because the array is sorted, duplicate numbers are next
-to each other.
-
-Use two pointers:
-- i keeps track of the last unique number.
-- j scans through the array.
-
-When nums[j] is different from nums[i], we found a new
-unique number, so we move i forward and copy nums[j].
-
-### Example
-
-[1, 1, 2, 2, 3]
-
-Becomes:
-
-[1, 2, 3, ...]
-
-The returned value is 3 because there are 3 unique numbers.
-
-### Time Complexity
-O(n)
-
-### Space Complexity
-O(1)
-
-### Key Lesson
-When an array is sorted, the two-pointer technique can
-remove duplicates efficiently without using extra space.

@@ -653,3 +653,37 @@ O(1)
 ### Key Lesson
 When an array is sorted, the two-pointer technique can
 remove duplicates efficiently without using extra space.
+
+## Remove Duplicates from Sorted Array II — LeetCode #80
+
+### Pattern
+Two Pointers
+
+### Idea
+Each number is allowed to appear at most twice.
+
+Use pointer i to build the valid part of the array.
+
+If i is less than 2, we always keep the number.
+
+After that, we only keep the current number if it is
+different from the number two positions behind.
+
+### Example
+
+[1, 1, 1, 2, 2, 3]
+
+Becomes:
+
+[1, 1, 2, 2, 3]
+
+### Time Complexity
+O(n)
+
+### Space Complexity
+O(1)
+
+### Key Lesson
+Because the array is sorted, we can control the number
+of duplicates by comparing with an element two positions
+behind.
