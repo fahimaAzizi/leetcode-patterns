@@ -288,3 +288,58 @@ The serialized string and recursion can require O(n) space.
 ### Key Lesson
 When serializing a tree, we must store null nodes too,
 otherwise the original tree structure cannot be reconstructed.
+## Construct Binary Tree from Preorder and Inorder Traversal — LeetCode #105
+
+### Pattern
+Trees + Recursion + Preorder + Inorder + Hash Map
+
+### Idea
+Preorder tells us the root first.
+
+Preorder:
+Root → Left → Right
+
+Inorder tells us which values belong to the left
+and right subtrees.
+
+Inorder:
+Left → Root → Right
+
+We take the current value from preorder as the root.
+Then we find its position in inorder.
+
+Everything before that position belongs to the
+left subtree, and everything after it belongs
+to the right subtree.
+
+### Example
+
+Preorder:
+[3, 9, 20, 15, 7]
+
+Inorder:
+[9, 3, 15, 20, 7]
+
+The first preorder value is 3, so 3 is the root.
+
+In inorder, 3 separates the left and right subtrees.
+
+        3
+       / \
+      9   20
+         /  \
+        15   7
+
+### Time Complexity
+O(n)
+
+n = number of nodes.
+
+### Space Complexity
+O(n)
+
+The hash map and recursion require O(n) space.
+
+### Key Lesson
+Preorder tells us WHAT the root is.
+Inorder tells us WHERE to split the tree.
