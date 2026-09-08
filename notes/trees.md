@@ -195,3 +195,51 @@ h = height of the tree because of recursion.
 ### Key Lesson
 Use the BST ordering to decide whether to move
 left, move right, or stop at the current node.
+
+## Binary Tree Maximum Path Sum — LeetCode #124
+
+### Pattern
+Trees + Recursion + Postorder Traversal
+
+### Idea
+A path can pass through a node and include both
+its left and right subtrees.
+
+For every node, calculate the best path that can
+continue upward to its parent.
+
+If a subtree gives a negative sum, we ignore it
+because it would make the path smaller.
+
+At each node, calculate:
+
+node value + left contribution + right contribution
+
+Keep the largest value seen as the answer.
+
+### Example
+
+        1
+       / \
+      2   3
+
+The maximum path is:
+
+2 → 1 → 3
+
+Answer = 6
+
+### Time Complexity
+O(n)
+
+n = number of nodes.
+
+### Space Complexity
+O(h)
+
+h = height of the tree because of recursion.
+
+### Key Lesson
+For every node, calculate the best path going upward,
+while separately checking the best complete path
+passing through that node.
