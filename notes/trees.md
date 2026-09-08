@@ -106,3 +106,48 @@ O(n)
 ### Key Lesson
 With level-order traversal, the last node of each
 level gives the right-side view of the tree.
+
+
+## Kth Smallest Element in a BST — LeetCode #230
+
+### Pattern
+Trees + Recursion + Binary Search Tree + Inorder Traversal
+
+### Idea
+In a Binary Search Tree, inorder traversal visits the
+nodes in sorted order.
+
+Inorder traversal follows:
+
+Left → Root → Right
+
+So we keep a counter while traversing the tree.
+When the counter reaches k, we have found the kth
+smallest element.
+
+### Example
+
+        3
+       / \
+      1   4
+       \
+        2
+
+Inorder traversal:
+
+1 → 2 → 3 → 4
+
+If k = 3, the answer is 3.
+
+### Time Complexity
+O(n)
+
+### Space Complexity
+O(h)
+
+h = height of the tree because of recursion.
+
+### Key Lesson
+In a BST, inorder traversal produces values in
+ascending order, so it can be used to find the
+kth smallest element.
