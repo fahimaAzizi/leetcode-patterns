@@ -384,3 +384,46 @@ excluding the space needed for the result.
 ### Key Lesson
 For root-to-leaf path problems, think:
 DFS + keep track of the current path.
+
+## Path Sum — LeetCode #112
+
+### Pattern
+Trees + DFS + Recursion
+
+### Idea
+We need to determine if there is a path from the
+root to a leaf where the sum of all node values
+equals targetSum.
+
+At each node, subtract its value from targetSum.
+
+When we reach a leaf, check whether the remaining
+target equals the leaf's value.
+
+### Example
+
+        5
+       / \
+      4   8
+     /
+    11
+
+For targetSum = 20:
+
+5 + 4 + 11 = 20
+
+So the answer is true.
+
+### Time Complexity
+O(n)
+
+n = number of nodes.
+
+### Space Complexity
+O(h)
+
+h = height of the tree because of recursion.
+
+### Key Lesson
+For root-to-leaf sum problems, subtract each node's
+value from the target while using DFS.
