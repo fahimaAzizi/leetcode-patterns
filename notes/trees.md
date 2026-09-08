@@ -343,3 +343,44 @@ The hash map and recursion require O(n) space.
 ### Key Lesson
 Preorder tells us WHAT the root is.
 Inorder tells us WHERE to split the tree.
+## Binary Tree Paths — LeetCode #257
+
+### Pattern
+Trees + DFS + Recursion + Backtracking
+
+### Idea
+We need to find every path from the root to a leaf.
+
+We use DFS to travel down the tree.
+
+At every node, add its value to the current path.
+
+When we reach a leaf node, save the complete path.
+
+### Example
+
+        1
+       / \
+      2   3
+       \
+        5
+
+Paths:
+
+1->2->5
+1->3
+
+### Time Complexity
+O(n)
+
+n = number of nodes.
+
+### Space Complexity
+O(h)
+
+h = height of the tree because of recursion,
+excluding the space needed for the result.
+
+### Key Lesson
+For root-to-leaf path problems, think:
+DFS + keep track of the current path.
