@@ -151,3 +151,47 @@ h = height of the tree because of recursion.
 In a BST, inorder traversal produces values in
 ascending order, so it can be used to find the
 kth smallest element.
+
+
+## Lowest Common Ancestor of a BST — LeetCode #235
+
+### Pattern
+Trees + Binary Search Tree + Recursion
+
+### Idea
+In a BST, values smaller than the current node are
+on the left and values larger are on the right.
+
+If both p and q are smaller than the current node,
+the LCA must be in the left subtree.
+
+If both are larger, the LCA must be in the right subtree.
+
+Otherwise, the current node is the Lowest Common Ancestor.
+
+### Example
+
+        6
+       / \
+      2   8
+     / \
+    0   4
+
+For p = 2 and q = 8:
+
+The values are on different sides of 6,
+so 6 is their Lowest Common Ancestor.
+
+### Time Complexity
+O(h)
+
+h = height of the tree.
+
+### Space Complexity
+O(h)
+
+h = height of the tree because of recursion.
+
+### Key Lesson
+Use the BST ordering to decide whether to move
+left, move right, or stop at the current node.
