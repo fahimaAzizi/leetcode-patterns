@@ -243,3 +243,48 @@ h = height of the tree because of recursion.
 For every node, calculate the best path going upward,
 while separately checking the best complete path
 passing through that node.
+
+## Serialize and Deserialize Binary Tree — LeetCode #297
+
+### Pattern
+Trees + Recursion + Preorder Traversal
+
+### Idea
+Serialization converts a binary tree into a string so
+it can be stored or transmitted.
+
+Deserialization converts that string back into the
+original binary tree.
+
+We use preorder traversal:
+
+Root → Left → Right
+
+For null nodes, we store "#".
+
+### Example
+
+        1
+       / \
+      2   3
+
+Serialized:
+
+1,2,#,#,3,#,#,
+
+The "#" values are important because they tell us
+where the null children are.
+
+### Time Complexity
+O(n)
+
+n = number of nodes.
+
+### Space Complexity
+O(n)
+
+The serialized string and recursion can require O(n) space.
+
+### Key Lesson
+When serializing a tree, we must store null nodes too,
+otherwise the original tree structure cannot be reconstructed.
