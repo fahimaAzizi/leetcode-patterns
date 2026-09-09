@@ -1116,4 +1116,77 @@ O(n × k)
 
 #98 / 120 completed
 
+**# Problem #99 / 120 - Valid Anagram — LeetCode #242**
+
+**## Pattern**
+
+Arrays + Hashing + Character Frequency
+
+**## Key Idea**
+
+Two strings are anagrams if they contain the same characters with the same frequencies.
+
+I use an array of size 26 to count the letters.
+
+For every character in `s`, I increase its count.
+
+For every character in `t`, I decrease its count.
+
+If all counts become `0`, the two strings are anagrams.
+
+**## Algorithm**
+
+1. Check if both strings have the same length.
+
+2. Create an array of 26 zeros.
+
+3. For every character:
+
+   * Increase the count for `s`.
+   * Decrease the count for `t`.
+
+4. Check all 26 counts.
+
+5. If any count is not `0`, return false.
+
+6. Otherwise, return true.
+
+**## Example**
+
+```text
+s = "anagram"
+t = "nagaram"
+```
+
+Both strings contain:
+
+```text
+a → 3
+n → 1
+g → 1
+r → 1
+m → 1
+```
+
+All character counts match.
+
+So the answer is:
+
+```text
+true
+```
+
+**## Time Complexity**
+
+O(n)
+
+**## Space Complexity**
+
+O(1)
+
+**## Progress**
+
+#99 / 120 completed
+
+
 

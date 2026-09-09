@@ -30,3 +30,44 @@
 -rotting Oranges
 - Open the Lock
 - Design Hit Counter
+
+**# Problem #100 / 120 - Implement Queue using Stacks — LeetCode #232**
+
+**## Pattern**
+
+Queue + Stack
+
+**## Key Idea**
+
+A stack follows Last In First Out, but a queue follows First In First Out.
+
+I use two stacks to create queue behavior.
+
+The input stack stores newly added elements.
+
+When I need to remove or view the front element, I move the elements from the input stack to the output stack.
+
+This reverses their order, so the oldest element becomes the top of the output stack.
+
+**## Algorithm**
+
+1. Create two stacks: `input` and `output`.
+
+2. For `push`, add the element to the `input` stack.
+
+3. For `pop` or `peek`:
+   - If `output` is empty, move all elements from `input` to `output`.
+   - The oldest element will now be on top of `output`.
+
+4. For `empty`, check whether both stacks are empty.
+
+**## Example**
+
+Push:
+
+1, 2, 3
+
+The input stack contains:
+
+```text
+[1, 2, 3]
