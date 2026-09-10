@@ -976,3 +976,144 @@ O(1) extra space, excluding the output array
 
 #96 / 120 completed
 
+**# Problem #97 / 120 - Top K Frequent Elements — LeetCode #347**
+
+**## Pattern**
+
+Arrays + Hash Map + Bucket Sort
+
+**## Key Idea**
+
+Count how many times each number appears using a hash map.
+
+Then create buckets where the index represents the frequency.
+
+Numbers that appear more often go into buckets with higher indexes.
+
+Start from the highest frequency and collect numbers until we have `k` elements.
+
+**## Algorithm**
+
+1. Create a hash map to count the frequency of every number.
+
+2. Create buckets where:
+
+   * The index is the frequency.
+   * The values are the numbers with that frequency.
+
+3. Start from the highest frequency.
+
+4. Add numbers to the answer.
+
+5. Stop when we have `k` numbers.
+
+**## Example**
+
+```text
+nums = [1,1,1,2,2,3]
+k = 2
+```
+
+Frequencies:
+
+```text
+1 → 3
+2 → 2
+3 → 1
+```
+
+The two most frequent elements are:
+
+```text
+[1,2]
+```
+
+**## Time Complexity**
+
+O(n)
+
+**## Space Complexity**
+
+O(n)
+
+**## Progress**
+
+#97 / 120 completed
+
+
+**# Problem #98 / 120 - Group Anagrams — LeetCode #49**
+
+**## Pattern**
+
+Arrays + Hash Map + Sorting
+
+**## Key Idea**
+
+Anagrams contain the same letters with the same frequencies.
+
+If I sort the letters of each word, anagrams will produce the same sorted string.
+
+For example:
+
+```text
+eat → aet
+tea → aet
+ate → aet
+```
+
+So I can use the sorted word as a key in a hash map.
+
+**## Algorithm**
+
+1. Create an empty hash map.
+
+2. For each word:
+
+   * Make a copy of the word.
+   * Sort its letters.
+   * Use the sorted word as the key.
+   * Add the original word to that group.
+
+3. Convert the hash map values into the final answer.
+
+4. Return the groups.
+
+**## Example**
+
+```text
+Input:
+["eat","tea","tan","ate","nat","bat"]
+```
+
+After sorting:
+
+```text
+eat → aet
+tea → aet
+tan → ant
+ate → aet
+nat → ant
+bat → abt
+```
+
+So the groups are:
+
+```text
+["eat","tea","ate"]
+["tan","nat"]
+["bat"]
+```
+
+**## Time Complexity**
+
+O(n × k log k)
+
+**## Space Complexity**
+
+O(n × k)
+
+**## Progress**
+
+#98 / 120 completed
+
+
