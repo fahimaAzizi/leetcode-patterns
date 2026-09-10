@@ -427,3 +427,441 @@ h = height of the tree because of recursion.
 ### Key Lesson
 For root-to-leaf sum problems, subtract each node's
 value from the target while using DFS.
+## Sum of Left Leaves — LeetCode #404
+
+### Pattern
+Trees + DFS + Recursion
+
+### Idea
+We need to find all leaf nodes that are on the
+left side of their parent.
+
+A leaf is a node with no left or right child.
+
+For every node, check whether its left child is
+a leaf. If it is, add its value to the sum.
+
+Then continue searching the rest of the tree.
+
+### Example
+
+        3
+       / \
+      9   20
+         /  \
+        15   7
+
+Left leaves:
+
+9 + 15 = 24
+
+Answer = 24
+
+### Time Complexity
+O(n)
+
+n = number of nodes.
+
+### Space Complexity
+O(h)
+
+h = height of the tree because of recursion.
+
+### Key Lesson
+A left leaf must satisfy TWO conditions:
+1. It is the left child of a node.
+2. It has no children of its own.
+## Diameter of Binary Tree — LeetCode #543
+
+### Pattern
+Trees + DFS + Recursion + Postorder Traversal
+
+### Idea
+The diameter is the longest path between any two nodes.
+
+For every node, calculate the height of its left
+and right subtrees.
+
+A path passing through the current node has length:
+
+left height + right height
+
+Keep the largest value as the diameter.
+
+### Example
+
+        1
+       / \
+      2   3
+     / \
+    4   5
+
+The longest path is:
+
+4 → 2 → 1 → 3
+
+Diameter = 3 edges.
+
+### Time Complexity
+O(n)
+
+n = number of nodes.
+
+### Space Complexity
+O(h)
+
+h = height of the tree because of recursion.
+
+### Key Lesson
+At every node, calculate the longest path passing
+through it while returning the height to its parent.
+
+## Subtree of Another Tree — LeetCode #572
+
+### Pattern
+Trees + DFS + Recursion
+
+### Idea
+We need to check whether subRoot appears as a
+complete subtree inside root.
+
+For every node in root, check if the tree starting
+at that node is exactly the same as subRoot.
+
+We use a helper function to compare two trees.
+
+### Example
+
+        3
+       / \
+      4   5
+     / \
+    1   2
+
+subRoot:
+
+      4
+     / \
+    1   2
+
+The answer is true because the tree rooted at 4
+is exactly the same as subRoot.
+
+### Time Complexity
+O(n * m)
+
+n = number of nodes in root.
+m = number of nodes in subRoot.
+
+### Space Complexity
+O(h)
+
+h = recursion depth.
+
+### Key Lesson
+Break the problem into two parts:
+1. Find possible matching roots.
+2. Check whether two trees are exactly the same.
+
+## Same Tree — LeetCode #100
+
+### Pattern
+Trees + DFS + Recursion
+
+### Idea
+Two binary trees are the same if they have the
+same structure and the same node values.
+
+We compare both trees at the same time.
+
+If both nodes are null, they match.
+
+If only one is null, the trees are different.
+
+If their values are different, the trees are different.
+
+Otherwise, recursively compare their left and
+right subtrees.
+
+### Example
+
+Tree 1:        Tree 2:
+
+    1              1
+   / \            / \
+  2   3          2   3
+
+Both trees have the same structure and values,
+so the answer is true.
+
+### Time Complexity
+O(n)
+
+n = number of nodes being compared.
+
+### Space Complexity
+O(h)
+
+h = height of the tree because of recursion.
+
+### Key Lesson
+To compare two trees, compare:
+1. Their node values.
+2. Their structure.
+3. Their left subtrees.
+4. Their right subtrees.
+
+## Symmetric Tree — LeetCode #101
+
+### Pattern
+Trees + DFS + Recursion
+
+### Idea
+A tree is symmetric if its left and right sides
+are mirror images of each other.
+
+We compare two nodes at the same time.
+
+The left child of one side must match the
+right child of the other side.
+
+The right child must match the left child.
+
+### Example
+
+        1
+       / \
+      2   2
+     / \ / \
+    3  4 4  3
+
+This tree is symmetric.
+
+### Time Complexity
+O(n)
+
+n = number of nodes.
+
+### Space Complexity
+O(h)
+
+h = height of the tree because of recursion.
+
+### Key Lesson
+For a symmetric tree, compare:
+left.left  with right.right
+left.right with right.left
+
+## Minimum Depth of Binary Tree — LeetCode #111
+
+### Pattern
+Trees + DFS + Recursion
+
+### Idea
+The minimum depth is the number of nodes on the
+shortest path from the root to a leaf.
+
+A leaf is a node with no left or right child.
+
+We recursively calculate the minimum depth of
+the left and right subtrees.
+
+An important point is that if one child is null,
+we cannot simply use min() because that would
+incorrectly choose the null side.
+
+### Example
+
+        3
+       / \
+      9   20
+         /  \
+        15   7
+
+Shortest path:
+
+3 → 9
+
+Minimum depth = 2
+
+### Time Complexity
+O(n)
+
+n = number of nodes.
+
+### Space Complexity
+O(h)
+
+h = height of the tree because of recursion.
+
+### Key Lesson
+For minimum depth, the path must end at a leaf.
+If one child is missing, use the other child.
+
+## Binary Tree Preorder Traversal — LeetCode #144
+
+### Pattern
+Trees + DFS + Recursion + Preorder Traversal
+
+### Idea
+Preorder traversal visits nodes in this order:
+
+Root → Left → Right
+
+We first process the current node, then recursively
+traverse the left subtree, followed by the right subtree.
+
+### Example
+
+        1
+       / \
+      2   3
+     / \
+    4   5
+
+Preorder:
+
+1 → 2 → 4 → 5 → 3
+
+### Time Complexity
+O(n)
+
+n = number of nodes.
+
+### Space Complexity
+O(h)
+
+h = height of the tree because of recursion.
+
+### Key Lesson
+Preorder means:
+Root first, then Left, then Right.
+
+## Binary Tree Postorder Traversal — LeetCode #145
+
+### Pattern
+Trees + DFS + Recursion + Postorder Traversal
+
+### Idea
+Postorder traversal visits nodes in this order:
+
+Left → Right → Root
+
+We first recursively process the left subtree,
+then the right subtree, and finally the current node.
+
+### Example
+
+        1
+       / \
+      2   3
+     / \
+    4   5
+
+Postorder:
+
+4 → 5 → 2 → 3 → 1
+
+### Time Complexity
+O(n)
+
+n = number of nodes.
+
+### Space Complexity
+O(h)
+
+h = height of the tree because of recursion.
+
+### Key Lesson
+Postorder means:
+Left first, Right second, Root last.
+
+## Binary Tree Inorder Traversal — LeetCode #94
+
+### Pattern
+Trees + DFS + Recursion + Inorder Traversal
+
+### Idea
+Inorder traversal visits nodes in this order:
+
+Left → Root → Right
+
+We first recursively visit the left subtree,
+then process the current node, and finally
+visit the right subtree.
+
+### Example
+
+        1
+         \
+          2
+         /
+        3
+
+Inorder:
+
+1 → 3 → 2
+
+### Time Complexity
+O(n)
+
+n = number of nodes.
+
+### Space Complexity
+O(h)
+
+h = height of the tree because of recursion.
+
+### Key Lesson
+Inorder means:
+Left first, Root second, Right last.
+
+For a BST, inorder traversal gives values
+in ascending order.
+
+## Binary Tree Level Order Traversal II — LeetCode #107
+
+### Pattern
+Trees + BFS + Queue
+
+### Idea
+This problem is similar to normal level order traversal,
+but the levels must be returned from bottom to top.
+
+We use BFS with a queue to collect each level normally.
+
+After collecting all levels, reverse the result.
+
+### Example
+
+        3
+       / \
+      9   20
+         /  \
+        15   7
+
+Normal level order:
+
+[3]
+[9, 20]
+[15, 7]
+
+Bottom-up result:
+
+[15, 7]
+[9, 20]
+[3]
+
+### Time Complexity
+O(n)
+
+n = number of nodes.
+
+### Space Complexity
+O(n)
+
+The queue and result require O(n) space.
+
+### Key Lesson
+Use BFS to collect levels, then reverse the
+result to get bottom-up level order.
