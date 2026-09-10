@@ -865,3 +865,114 @@ The queue and result require O(n) space.
 ### Key Lesson
 Use BFS to collect levels, then reverse the
 result to get bottom-up level order.
+
+## Kth Smallest Element in a BST — LeetCode #230
+
+### Pattern: Inorder Traversal
+
+A Binary Search Tree has smaller values on the left and larger values on the right.
+
+If we perform an inorder traversal:
+
+Left → Root → Right
+
+the values are visited in sorted order.
+
+So, I can count the visited nodes. When the count becomes k, that node is the k-th smallest element.
+
+### Example
+
+BST values in inorder:
+
+1, 2, 3, 4, 5, 6
+
+For k = 3, the answer is 3.
+
+### Complexity
+
+Time: O(n) in the worst case.
+
+Space: O(h), where h is the height of the tree.
+**# Problem #96 / 120 - Product of Array Except Self — LeetCode #238**
+
+**## Pattern**
+
+Arrays + Prefix/Suffix Products
+
+**## Key Idea**
+
+For every position, we need the product of all numbers **except the current number**.
+
+We can calculate:
+
+* The product of all numbers on the left.
+* The product of all numbers on the right.
+
+Then multiply them together.
+
+We don't need division.
+
+**## Algorithm**
+
+1. Create an `answer` array filled with `1`.
+
+2. Go from left to right:
+
+   * Store the product of all numbers before the current position.
+   * Update the left product.
+
+3. Go from right to left:
+
+   * Multiply the current answer by the product of all numbers after it.
+   * Update the right product.
+
+4. Return the `answer` array.
+
+**## Example**
+
+```text
+nums = [1,2,3,4]
+```
+
+For `1`:
+
+```text
+2 × 3 × 4 = 24
+```
+
+For `2`:
+
+```text
+1 × 3 × 4 = 12
+```
+
+For `3`:
+
+```text
+1 × 2 × 4 = 8
+```
+
+For `4`:
+
+```text
+1 × 2 × 3 = 6
+```
+
+So the answer is:
+
+```text
+[24,12,8,6]
+```
+
+**## Time Complexity**
+
+O(n)
+
+**## Space Complexity**
+
+O(1) extra space, excluding the output array
+
+**## Progress**
+
+#96 / 120 completed
+
