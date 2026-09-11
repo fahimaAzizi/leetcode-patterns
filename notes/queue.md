@@ -125,3 +125,57 @@ k = 3
 enQueue(1)
 enQueue(2)
 enQueue(3)
+
+**# Problem #102 / 120 - Design Circular Deque — LeetCode #641**
+
+**## Pattern**
+
+Queue + Circular Array + Deque
+
+**## Key Idea**
+
+A Deque allows insertion and deletion from both the front and the rear.
+
+I use a circular array so that empty positions can be reused.
+
+I keep track of:
+
+- `front` for the first element.
+- `rear` for the last element.
+- `count` for the number of elements.
+- `capacity` for the maximum size.
+
+The circular movement is done using the modulo operator.
+
+**## Algorithm**
+
+1. Create an array with size `k`.
+
+2. Keep track of `front`, `rear`, and `count`.
+
+3. For `insertFront`:
+   - Move `front` one position backward.
+   - Insert the value.
+   - Increase `count`.
+
+4. For `insertLast`:
+   - Move `rear` one position forward.
+   - Insert the value.
+   - Increase `count`.
+
+5. For deletion:
+   - Move `front` or `rear` accordingly.
+   - Decrease `count`.
+
+6. The deque is empty when `count == 0`.
+
+7. The deque is full when `count == capacity`.
+
+**## Example**
+
+```text
+k = 3
+
+insertLast(1)
+insertLast(2)
+insertFront(3)
