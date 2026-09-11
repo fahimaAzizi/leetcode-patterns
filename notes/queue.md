@@ -71,3 +71,57 @@ The input stack contains:
 
 ```text
 [1, 2, 3]
+
+
+**# Problem #101 / 120 - Design Circular Queue — LeetCode #622**
+
+**## Pattern**
+
+Queue + Circular Array
+
+**## Key Idea**
+
+A circular queue allows us to reuse the space that becomes empty after removing elements.
+
+I use an array and keep track of:
+
+- `front` for the first element.
+- `rear` for the next position to insert.
+- `count` for the number of elements.
+- `capacity` for the maximum size.
+
+When the rear reaches the end of the array, it goes back to the beginning.
+
+I use:
+
+(rear + 1) % capacity
+
+to make the queue circular.
+
+**## Algorithm**
+
+1. Create an array with size `k`.
+
+2. Set `front` and `rear` to `0`.
+
+3. When adding an element:
+   - Put it at `rear`.
+   - Move `rear` using the circular formula.
+   - Increase `count`.
+
+4. When removing an element:
+   - Move `front` using the circular formula.
+   - Decrease `count`.
+
+5. The queue is empty when `count == 0`.
+
+6. The queue is full when `count == capacity`.
+
+**## Example**
+
+```text
+k = 3
+
+enQueue(1)
+enQueue(2)
+enQueue(3)
