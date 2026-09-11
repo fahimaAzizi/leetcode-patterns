@@ -179,3 +179,117 @@ k = 3
 insertLast(1)
 insertLast(2)
 insertFront(3)
+
+**# Problem #103 / 120 - Design Front Middle Back Queue — LeetCode #1670**
+
+**## Pattern**
+
+Queue + Deque
+
+**## Key Idea**
+
+This queue allows insertion and deletion from three positions:
+
+- Front
+- Middle
+- Back
+
+I use a `deque` because it allows easy insertion and deletion from both ends.
+
+For the middle position, I use the size of the queue to find the correct index.
+
+When the queue has an even number of elements, the first of the two middle elements is used.
+
+**## Algorithm**
+
+1. Create a deque to store the elements.
+
+2. For `pushFront`, add the value to the front.
+
+3. For `pushBack`, add the value to the back.
+
+4. For `pushMiddle`:
+   - Find the middle index.
+   - Insert the value at that position.
+
+5. For `popFront`:
+   - Remove and return the first element.
+
+6. For `popBack`:
+   - Remove and return the last element.
+
+7. For `popMiddle`:
+   - Find the middle index.
+   - Remove and return that element.
+
+8. Return `-1` when trying to remove from an empty queue.
+
+**## Example**
+
+Start with:
+
+```text
+1 → 2
+**# Problem #104 / 120 - Number of Recent Calls — LeetCode #933**
+
+**## Pattern**
+
+Queue + Sliding Window
+
+**## Key Idea**
+
+I need to count how many requests happened during the last 3000 milliseconds.
+
+Because the request times are given in increasing order, I can use a queue.
+
+I add every new request to the queue.
+
+Then I remove requests that are older than:
+
+t - 3000
+
+The size of the queue gives me the number of recent requests.
+
+**## Algorithm**
+
+1. Create an empty queue.
+
+2. For every `ping(t)`:
+   - Add `t` to the queue.
+
+3. Remove elements from the front while they are older than `t - 3000`.
+
+4. Return the size of the queue.
+
+**## Example**
+
+```text
+ping(1)
+ping(100)
+ping(3001)
+
+**# Problem #105 / 120 - Find All Numbers Disappeared in an Array — LeetCode #448**
+
+**## Pattern**
+Arrays + In-place Marking
+
+**## Key Idea**
+Use each number as an index and mark that position negative.
+
+**## Algorithm**
+1. For each number, calculate `abs(num) - 1`.
+2. Make that position negative.
+3. Scan the array.
+4. If `nums[i]` is positive, `i + 1` is missing.
+
+**## Example**
+`[4,3,2,7,8,2,3,1] → [5,6]`
+
+**## Time Complexity**
+O(n)
+
+**## Space Complexity**
+O(1) extra space
+
+**## Progress**
+#105 / 120 completed
