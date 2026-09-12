@@ -58,3 +58,29 @@ O(n)
 
 **## Progress**
 #106 / 120 completed
+**# Problem #107 / 120 - Number of Islands — LeetCode #200**
+
+**## Pattern**
+Graphs + DFS + Grid
+
+**## Key Idea**
+When we find land, count a new island and use DFS to visit all connected land cells.
+
+**## Algorithm**
+1. Scan every cell in the grid.
+2. When a cell contains `'1'`, increase the island count.
+3. Run DFS from that cell.
+4. Mark visited land as `'0'`.
+5. Continue until the whole grid is scanned.
+
+**## Example**
+`[["1","1","0"],["1","0","0"],["0","0","1"]] → 2`
+
+**## Time Complexity**
+O(rows × cols)
+
+**## Space Complexity**
+O(rows × cols)
+
+**## Progress**
+#107 / 120 completed
