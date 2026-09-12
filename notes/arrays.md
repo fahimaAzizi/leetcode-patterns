@@ -686,4 +686,30 @@ O(1)
 ### Key Lesson
 Because the array is sorted, we can control the number
 of duplicates by comparing with an element two positions
-behind.
+behind.\
+**# Problem #106 / 120 - Merge Intervals — LeetCode #56**
+
+**## Pattern**
+Arrays + Sorting + Intervals
+
+**## Key Idea**
+Sort intervals by starting point, then merge overlapping intervals.
+
+**## Algorithm**
+1. Sort the intervals.
+2. Add the first interval to the result.
+3. Compare each interval with the last result interval.
+4. If they overlap, update the ending point.
+5. Otherwise, add the new interval.
+
+**## Example**
+`[[1,3],[2,6],[8,10],[15,18]] → [[1,6],[8,10],[15,18]]`
+
+**## Time Complexity**
+O(n log n)
+
+**## Space Complexity**
+O(n)
+
+**## Progress**
+#106 / 120 completed
