@@ -112,3 +112,33 @@ O(V)
 
 **## Progress**
 #108 / 120 completed
+**# Problem #109 / 120 - Course Schedule — LeetCode #207**
+
+**## Pattern**
+Graphs + BFS + Topological Sort
+
+**## Key Idea**
+If all courses can be processed using their prerequisites, there is no cycle.
+
+**## Algorithm**
+1. Build the directed graph.
+2. Calculate the indegree of every course.
+3. Add courses with indegree `0` to a queue.
+4. Remove courses from the queue.
+5. Decrease the indegree of their neighbors.
+6. If all courses are processed, return `true`.
+7. Otherwise, a cycle exists, so return `false`.
+
+**## Example**
+`numCourses = 2, [[1,0]] → true`
+
+`numCourses = 2, [[1,0],[0,1]] → false`
+
+**## Time Complexity**
+O(V + E)
+
+**## Space Complexity**
+O(V + E)
+
+**## Progress**
+#109 / 120 completed
